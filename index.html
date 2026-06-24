@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Baby Step Grocery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial;
+      margin: 0;
+      background: #f4f6f5;
+    }
+
+    header {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+      url("image1.jpeg");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8em;
+    }
+
+    nav {
+      background: #1b5e20;
+      padding: 12px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 25px;
+    }
+
+    .card {
+      background: white;
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Slideshow */
+    .slideshow-container {
+      max-width: 800px;
+      margin: 20px auto;
+      position: relative;
+    }
+
+    .slide {
+      width: 100%;
+      display: none;
+      border-radius: 15px;
+      animation: fade 1s;
+    }
+
+    @keyframes fade {
+      from {opacity: 0.4;}
+      to {opacity: 1;}
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 10px;
+      color: white;
+      font-size: 20px;
+      background: rgba(0,0,0,0.5);
+      border-radius: 50%;
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+    /* Products grid */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .product {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .product img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .product:hover {
+      transform: scale(1.05);
+    }
+
+    /* Mobile image fix */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    footer {
+      background: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Baby Step Grocery</h1>
+  <p>Your friendly neighborhood grocery store</p>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#products">Products</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<div class="container">
+
+  <div class="card" id="about">
+    <h2>About Us</h2>
+    <p>
+      Baby Step Grocery is a local convenience store in Zambia offering
+      fresh groceries, drinks, snacks, and daily essentials at affordable prices.
+    </p>
+  </div>
+
+  <div class="card" id="products">
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+
+      <img class="slide" src="image1.jpeg">
+      <img class="slide" src="image2.jpeg">
+      <img class="slide" src="image3.jpeg">
+      <img class="slide" src="image4.jpeg">
+      <img class="slide" src="image5.jpeg">
+      <img class="slide" src="image6.jpeg">
+      <img class="slide" src="image7.jpeg">
+      <img class="slide" src="image8.jpeg">
+      <img class="slide" src="image9.jpeg">
+      <img class="slide" src="image10.jpeg">
+
+      <div class="prev" onclick="changeSlide(-1)">❮</div>
+      <div class="next" onclick="changeSlide(1)">❯</div>
+
+    </div>
+
+    <h2>What We Sell</h2>
+
+    <!-- Product Grid -->
+    <div class="products">
+      <div class="product"><img src="image1.jpeg"></div>
+      <div class="product"><img src="image2.jpeg"></div>
+      <div class="product"><img src="image3.jpeg"></div>
+      <div class="product"><img src="image4.jpeg"></div>
+      <div class="product"><img src="image5.jpeg"></div>
+      <div class="product"><img src="image6.jpeg"></div>
+      <div class="product"><img src="image7.jpeg"></div>
+      <div class="product"><img src="image8.jpeg"></div>
+      <div class="product"><img src="image9.jpeg"></div>
+      <div class="product"><img src="image10.jpeg"></div>
+    </div>
+
+  </div>
+
+  <div class="card" id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Location:</strong> Zambia</p>
+    <p><strong>Phone:</strong> +260 XXX XXX XXX</p>
+    <p><strong>Hours:</strong> 7 AM – 9 PM (Daily)</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 Baby Step Grocery</p>
+</footer>
+
+<script>
+let index = 1;
+showSlides(index);
+
+function changeSlide(n) {
+  showSlides(index += n);
+}
+
+function showSlides(n) {
+  let slides = document.getElementsByClassName("slide");
+
+  if (n > slides.length) { index = 1 }
+  if (n < 1) { index = slides.length }
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  slides[index - 1].style.display = "block";
+}
+
+setInterval(() => {
+  changeSlide(1);
+}, 4000);
+</script>
+
+</body>
+</html>
+``
