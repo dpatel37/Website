@@ -153,24 +153,24 @@
     <h2>What We Sell</h2>
   
     <div class="slideshow-container">
-      <img class="slide" src="image11.jpeg">
-      <img class="slide" src="image12.jpeg">
-      <img class="slide" src="image13.jpeg">
-      <img class="slide" src="image14.jpeg">
-      <img class="slide" src="image15.jpeg">
-      <img class="slide" src="image16.jpeg">
-      <img class="slide" src="image17.jpeg">
-      <img class="slide" src="image18.jpeg">
-      <img class="slide" src="image19.jpeg">
-      <img class="slide" src="image20.jpeg">
-      <img class="slide" src="image21.jpeg">
-      <img class="slide" src="image22.jpeg">
-      <img class="slide" src="image23.jpeg">
-      <img class="slide" src="image24.jpeg">
-      <img class="slide" src="image25.jpeg">
-      <img class="slide" src="image26.jpeg">
-      <img class="slide" src="image27.jpeg">
-      <img class="slide" src="image28.jpeg">
+      <img class="slide1" src="image11.jpeg">
+      <img class="slide1" src="image12.jpeg">
+      <img class="slide1" src="image13.jpeg">
+      <img class="slide1" src="image14.jpeg">
+      <img class="slide1" src="image15.jpeg">
+      <img class="slide1" src="image16.jpeg">
+      <img class="slide1" src="image17.jpeg">
+      <img class="slide1" src="image18.jpeg">
+      <img class="slide1" src="image19.jpeg">
+      <img class="slide1" src="image20.jpeg">
+      <img class="slide1" src="image21.jpeg">
+      <img class="slide1" src="image22.jpeg">
+      <img class="slide1" src="image23.jpeg">
+      <img class="slide1" src="image24.jpeg">
+      <img class="slide1" src="image25.jpeg">
+      <img class="slide1" src="image26.jpeg">
+      <img class="slide1" src="image27.jpeg">
+      <img class="slide1" src="image28.jpeg">
   
       <div class="prev" onclick="changeSlide(-1)">❮</div>
       <div class="next" onclick="changeSlide(1)">❯</div>
@@ -182,16 +182,16 @@
   <h2>My Shop</h2>
 
   <div class="slideshow-container">
-    <img class="slide" src="image1.jpeg">
-    <img class="slide" src="image2.jpeg">
-    <img class="slide" src="image3.jpeg">
-    <img class="slide" src="image4.jpeg">
-    <img class="slide" src="image5.jpeg">
-    <img class="slide" src="image6.jpeg">
-    <img class="slide" src="image7.jpeg">
-    <img class="slide" src="image8.jpeg">
-    <img class="slide" src="image9.jpeg">
-    <img class="slide" src="image10.jpeg">
+    <img class="slide2" src="image1.jpeg">
+    <img class="slide2" src="image2.jpeg">
+    <img class="slide2" src="image3.jpeg">
+    <img class="slide2" src="image4.jpeg">
+    <img class="slide2" src="image5.jpeg">
+    <img class="slide2" src="image6.jpeg">
+    <img class="slide2" src="image7.jpeg">
+    <img class="slide2" src="image8.jpeg">
+    <img class="slide2" src="image9.jpeg">
+    <img class="slide2" src="image10.jpeg">
 
     <div class="prev" onclick="changeSlide(-1)">❮</div>
     <div class="next" onclick="changeSlide(1)">❯</div>
@@ -214,30 +214,62 @@
 </footer>
 
 <script>
-let index = 1;
-showSlides(index);
-
-function changeSlide(n) {
-  showSlides(index += n);
-}
-
-function showSlides(n) {
-  let slides = document.getElementsByClassName("slide");
-
-  if (n > slides.length) { index = 1 }
-  if (n < 1) { index = slides.length }
-
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+  /* SLIDESHOW 1 */
+  let index1 = 1;
+  showSlides1(index1);
+  
+  function changeSlide1(n) {
+    showSlides1(index1 += n);
   }
-
-  slides[index - 1].style.display = "block";
-}
-
-setInterval(() => {
-  changeSlide(1);
-}, 4000);
-</script>
+  
+  function showSlides1(n) {
+    let slides = document.getElementsByClassName("slide1");
+  
+    if (n > slides.length) { index1 = 1 }
+    if (n < 1) { index1 = slides.length }
+  
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+  
+    if (slides.length > 0) {
+      slides[index1 - 1].style.display = "block";
+    }
+  }
+  
+  setInterval(() => {
+    changeSlide1(1);
+  }, 4000);
+  
+  
+  /* SLIDESHOW 2 */
+  let index2 = 1;
+  showSlides2(index2);
+  
+  function changeSlide2(n) {
+    showSlides2(index2 += n);
+  }
+  
+  function showSlides2(n) {
+    let slides = document.getElementsByClassName("slide2");
+  
+    if (n > slides.length) { index2 = 1 }
+    if (n < 1) { index2 = slides.length }
+  
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+  
+    if (slides.length > 0) {
+      slides[index2 - 1].style.display = "block";
+    }
+  }
+  
+  setInterval(() => {
+    changeSlide2(1);
+  }, 5000);
+  </script>
+  ``
 
 </body>
 </html>
