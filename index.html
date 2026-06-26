@@ -51,18 +51,19 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    /* Slideshow */
     .slideshow-container {
       max-width: 800px;
+      height: 400px;        
       margin: 20px auto;
       position: relative;
     }
 
-    .slide {
+    .slide1, .slide2 {
       width: 100%;
+      height: 100%;         
+      object-fit: cover;    
       display: none;
       border-radius: 15px;
-      animation: fade 1s;
     }
 
     @keyframes fade {
@@ -130,6 +131,8 @@
       padding: 20px;
       margin-top: 20px;
     }
+
+
   </style>
 </head>
 
